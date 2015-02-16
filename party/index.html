@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girl Develop It DFW</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="css/ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="../css/styles.css">
+  <!--<![endif]-->
+<script type="text/javascript">
+  $(document).scroll(function(){
+        var elem = $('.top-menu');
+        if (!elem.attr('data-top')) {
+          if (elem.hasClass('navbar-fixed-top')) {
+            return;
+          }
+          var offset = elem.offset();
+          elem.attr('data-top', offset.top);
+        }
+        if (elem.attr('data-top') - elem.outerHeight() <= $(this).scrollTop() - $(elem).outerHeight()) {
+          elem.addClass('navbar-fixed-top');
+        } else {
+          elem.removeClass('navbar-fixed-top');
+        }
+      });
+</script>
+</head>
+<body class="launch">
+
+<div id="layout" class="pure-g">
+  <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+      <hgroup>
+        <a href="/"><img class="pure-img-responsive" src="../img/logo.png" alt="Girl Develop It DFW"/></a>
+        <h4>Empowering women in the DFW area to learn how to program in a supportive and fun environment.</h4>
+      </hgroup>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="pure-button" href="http://www.meetup.com/Girl-Develop-It-DFW/">Join our Meetup</a></li>
+          <li class="nav-item"><a class="pure-button" href="../">Course Listings</a></li>
+          <li class="nav-item"><a class="pure-button" href="../volunteer">Get Involved</a></li>
+          <li class="nav-item"><a class="pure-button" href="../survey">Take Our Survey</a></li>
+          <!--<li class="nav-item"><a class="pure-button" href="/sponsorship">Sponsorship</a></li>-->
+        </ul>
+      </nav>
+
+      <div class="footer">
+        <ul>
+          <li><a href="http://girldevelopit.com/chapters/dallas-fort-worth">About</a></li>
+          <li><a href="http://twitter.com/gdidfw/">Twitter</a></li>
+          <li><a href="http://github.com/gdidfw/">GitHub</a></li>
+        </ul>
+      </div>
+   </div>
+  </div>
+
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div>
+
+      <div class="posts">
+        <h1>GDI DFW Launch Party, September 4th</h1>
+        <div style="width:100%; text-align:left;" ><iframe  src="//eventbrite.com/tickets-external?eid=11238979089&ref=etckt" frameborder="0" height="260" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Event management</a><span style="color:#ddd;"> for </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="https://gdidfw-launch.eventbrite.com/?ref=etckt">Girl Develop It DFW Launch Party</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a></div></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

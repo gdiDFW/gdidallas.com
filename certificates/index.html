@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girl Develop It DFW</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="css/ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+      <link rel="stylesheet" href="../css/styles.css">
+  <!--<![endif]-->
+<script type="text/javascript">
+  $(document).scroll(function(){
+        var elem = $('.top-menu');
+        if (!elem.attr('data-top')) {
+          if (elem.hasClass('navbar-fixed-top')) {
+            return;
+          }
+          var offset = elem.offset();
+          elem.attr('data-top', offset.top);
+        }
+        if (elem.attr('data-top') - elem.outerHeight() <= $(this).scrollTop() - $(elem).outerHeight()) {
+          elem.addClass('navbar-fixed-top');
+        } else {
+          elem.removeClass('navbar-fixed-top');
+        }
+      });
+</script>
+</head>
+<body class="launch">
+
+<div id="layout" class="pure-g">
+  <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+      <hgroup>
+        <a href="/"><img class="pure-img-responsive" src="../img/logo.png" alt="Girl Develop It DFW"/></a>
+        <h4>Empowering women in the DFW area to learn how to program in a supportive and fun environment.</h4>
+      </hgroup>
+
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="pure-button" href="http://www.meetup.com/Girl-Develop-It-DFW/">Join our Meetup</a></li>
+          <li class="nav-item"><a class="pure-button" href="../">Course Listings</a></li>
+          <li class="nav-item"><a class="pure-button" href="../volunteer">Get Involved</a></li>
+          <li class="nav-item"><a class="pure-button" href="../survey">Take Our Survey</a></li>
+          <!--<li class="nav-item"><a class="pure-button" href="/sponsorship">Sponsorship</a></li>-->
+        </ul>
+      </nav>
+
+      <div class="footer">
+        <ul>
+          <li><a href="http://girldevelopit.com/chapters/dallas-fort-worth" target="_blank">About</a></li>
+          <li><a href="http://twitter.com/gdidfw/" target="_blank">Twitter</a></li>
+          <li><a href="http://github.com/gdidfw/" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+   </div>
+  </div>
+
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div>
+
+      <div class="posts">
+        <h1>GDI DFW Certificate Tracks</h1>
+        <div class="pure-menu pure-menu-open pure-menu-horizontal top-menu" data-top="162">
+          <ul>
+            <li class="pure-menu-selected"><a href="#fed">Front End Dev I</a></li>
+            <li><a href="#advfed">Front End Dev II</a></li>
+            <li><a href="#js">JavaScript</a></li>
+            <li><a href="#wp">WordPress</a></li>
+            <li><a href="#dr">Drupal</a></li>
+            <li><a href="#php">PHP/MySql</a></li>
+            <!--<li><a href="#be">Backend</a></li>-->
+          </ul>
+        </div>
+        <h3>Below are the GDI Certificate Tracks we are offering. At the end of completing all of the required classes in each track, the student will receive a GDI certificate proving your mastery in the track's topic(s). The student will also have the option of accepting an internship or job at several DFW companies.</h3>
+        <h5>(It will be up to you, the student, to acquire the certificate from the leaders of GDI DFW. Please email dallas@girldevelopit.com to inquire about your certificate)</h5>
+        <div id="fed"></div>
+        <h1 class="content-subhead">Front End Developer Track I</h1>
+        <ul>
+          <li>Intro to HTML/CSS</li>
+          <li>JS 101</li>
+          <li>Diving in Deeper with HTML5 &amp; CSS3</li>
+          <li>Web Design/Photoshop I</li>
+          <li>Using Git/Github</li>
+        </ul>
+        <div id="advfed"></div>
+        <h1 class="content-subhead">Front End Developer Track II</h1>
+        <ul>
+          <li>JS 102</li>
+          <li>Responsive Design</li>
+          <li>SASS/LESS</li>
+          <!--<li>Project Development</li>-->
+          <!--<li>Angular JS</li>-->
+          <li>Using Bootstrap/Frameworks</li>
+          <li>Portfolio Development</li>
+        </ul>
+        <div id="js"></div>
+        <h1 class="content-subhead">JavaScript Track</h1>
+        <ul>
+          <li>JS 101</li>
+          <li>JS 102</li>
+          <li>JS 103</li>
+          <li>JS 104</li>
+          <li>JS 105</li>
+        </ul>
+        <div id="wp"></div>
+        <h1 class="content-subhead">WordPress Track</h1>
+        <ul>
+          <li>WordPress 101</li>
+          <li>WordPress 102</li>
+          <li>WordPress 103</li>
+          <li>WordPress 104</li>
+          <li>WordPress 105</li>
+        </ul>
+        <div id="dr"></div>
+        <h1 class="content-subhead">Drupal Track</h1>
+        <ul>
+          <li>Drupal 101</li>
+          <li>Drupal 102</li>
+          <li>Drupal 103</li>
+          <li>Drupal 104</li>
+          <li>Drupal 105</li>
+        </ul>
+        <div id="php"></div>
+        <h1 class="content-subhead">PHP/MySql Track</h1>
+        <ul>
+          <li>PHP/MySql 101</li>
+          <li>PHP/MySql 102</li>
+          <li>PHP/MySql 103</li>
+          <li>PHP/MySql 104</li>
+          <li>PHP/MySql 105</li>
+        </ul>
+        <div id="be"></div>
+        <!--<h1 class="content-subhead">Backend Development Track</h1>
+        <ul>
+          <li>Ruby</li>
+          <li>PHP/MySql</li>
+          <li>Node</li>
+          <li>Database Management</li>
+          <li>Python</li>
+          <li>Data Migration</li>
+          <li>.NET</li>
+          <li>Java</li>
+        </ul>
+        <div id="be"></div>
+        <h1 class="content-subhead">Mobile App Development Track</h1>
+        <ul>
+          <li>Java</li>
+          <li>Titanium</li>
+          <li>HTML/CSS</li>
+          <li>JS 104</li>
+          <li>Obj C</li>
+        </ul>-->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
