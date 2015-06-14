@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Girl Develop It Chicago</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <!--[if lte IE 8]>
@@ -55,26 +56,25 @@
           <div class="posts">
             <h1 id="chi-header">Girl Develop It Chicago</h1>
 
-            <h2 id="main-slogan">Want to learn how to code? Have a great idea?<br><em>Don't be shy. Develop it.</em></h2>
+            <h2 id="main-slogan"><strong>Want to learn how to code? Have a great idea?</strong><br><em>Don't be shy. Develop it.</em></h2>
 
-            <p>At Girl Develop It, our goal is to empower and assist women interested in getting into and advancing in the tech industry.</p>
+            <h4>At <a href="http://www.girldevelopit.com">Girl Develop It</a>, our goal is to empower and assist women interested in getting into and advancing in the tech industry.</h4>
 
-            <p>Our courses focus on teaching modern development best practices and having something to show for it (ie. a sweet website, a browser based game, a network of industry experts, or even a stellar résumé).</p>
+            <h4>Our courses focus on teaching modern development best practices and having something to show for it (ie. a sweet website, a browser-based game, a network of industry experts, or even a stellar résumé).</h4>
 
-            <p>We've got a ton of awesome events lined up and a community that is ready to learn and grow! We hope to see you at a future event!</p>
+            <h4>We've got a ton of awesome events lined up and a community that is ready to learn and grow! We hope to see you at a future event!</h4>
 
-            <p><a class="pure-button" href="http://www.meetup.com/Girl-Develop-It-Chicago-IL/">Join Our Meetup Group</a></p>
 
-            <h3>About Our Chapter</h2>
+            <div class="meetups">
+              <p><a class="pure-button" id="join-from-events" href="http://www.meetup.com/Girl-Develop-It-Chicago-IL/">Join Our Meetup Group</a></p>
+              <h2 class="events__header">Upcoming Events</h2>
+              <div class="events"><p><em>Fetching events...</em></p></div>
+            </div>
 
-            <p>The Chicago chapter of Girl Develop It was established in 2013 and currently has over 2,600 members! Check out the <a href="about/GDI2YearAnni/index.html" target="_blank">slides</a> from our 2 Year Anniversary party for some fun facts about GDI Chicago.</p>
+            <h2>About Our Chapter</h2>
+
+            <h4>The <a href="http://www.girldevelopit.com/chapters/chicago">Chicago chapter</a> of Girl Develop It was established in 2013 and currently has over 2,600 members! Check out the <a href="about/GDI2YearAnni/index.html" target="_blank">slides</a> from our 2 Year Anniversary party for some fun facts about GDI Chicago.</h4>
           </div>
-
-<!--         <div class="meetups">
-          <a class="meetups__join" href="http://www.meetup.com/Girl-Develop-It-Chicago-IL/" target="_blank">Join Our Meetup Group &raquo;</a>
-          <h2 class="events__header">Upcoming Events</h2>
-          <div class="events"><p><em>Fetching events...</em></p></div>
-        </div> -->
 
           <div class="footer">
             <div class="pure-menu pure-menu-horizontal pure-menu-open">
@@ -88,5 +88,58 @@
         </div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        var meetup_url = "https://api.meetup.com/2/events?key=203a546e60787a7c5b27306b3c5b49&group_urlname=Girl-Develop-It-Chicago-IL&sign=true&callback=?";
+        var classesArr = null;
+
+        $.getJSON(meetup_url).done(function (classesData){
+          classesArr = classesData.results;
+          if(classesArr.length>0) {
+            var newHTML = "<table class=\"pure-table pure-table-horizontal pure-table-striped\"><tr><th>Event</th><th>Date</th><th>Venue</th><th>Location</th><th>RSVP</th>";
+            var formattedTime = "";
+
+            $.each(classesArr, function() {
+              newHTML += "<tr><td>" + this.name + "</td>";
+              if (this.time) {
+                var date = new Date(this.time),
+                 monthNames = [
+                        "January", "February", "March",
+                        "April", "May", "June", "July",
+                        "August", "September", "October",
+                        "November", "December"
+                    ];
+
+                var day = date.getDate(),
+                 monthIndex = date.getMonth(),
+                 year = date.getFullYear(),
+                 hour = date.getHours(),
+                 minutes = date.getMinutes();
+
+                if (minutes == "0") {
+                  minutes = "00";
+                }
+
+                formattedTime = monthNames[monthIndex] + " " + day + ", " + year + " @ " + hour + ":" + minutes;
+                newHTML += "<td>" + formattedTime + "</td>";
+              }
+              if (this.venue) {
+                newHTML += "<td> @ " + this.venue.name + "</td><td>" + this.venue.address_1 + "</td>"
+              } else {
+                newHTML += "<td></td><td></td>"
+              }
+              newHTML += "<td><a class='pure_button' href='" + this.event_url + "'>RSVP</a></td></tr>";
+            });
+
+            newHTML += "</table>";
+
+            console.log(newHTML);
+            $(".events").html(newHTML);
+
+          } else {
+            $(".events").html("<p class=\"uhOh\">Sadly, no meetups are currently scheduled. <a href=\"http://meetup.com/Girl-Develop-It-Chicago-IL\">Join our meetup group</a> to be notified when a new meetup is happening. Thanks for visiting us!</p>")};
+          });
+    </script>
+
   </body>
 </html>

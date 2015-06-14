@@ -116,6 +116,20 @@ h6 {font-size: 1rem; font-weight: 300;}
 
 #main-slogan {
     text-align: center;
+    color: #00a9b4;
+}
+
+#join-from-events {
+    background-color: #F05B62;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#join-from-events:hover {
+    background-color: #00a9b4;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .post {
