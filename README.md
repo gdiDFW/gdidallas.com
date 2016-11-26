@@ -1,4 +1,4 @@
-# gdidallas.com
+# gdichicago.github.io
 
 ## Contributing workflow
 
